@@ -121,6 +121,73 @@ This view demonstrates the single-column stacked layout, and the exclusion of th
 
 ---
 
+### Micro-Level Design & Content Audits
+
+#### IS-10: Stray Dot Layout Artifact (Comparison Section)
+* **Location:** `Legacy QMS vs. QMS.AIVOA.AI` Comparison Cards
+* **Type:** Visual Bug / Layout Cleanliness
+* **Principle Violated:** Aesthetic & Minimalist Design / Attention to Detail
+* **Analysis:** Each comparison card contains a stray, visible blue dot `.` in the center column spacer cell. This is a layout rendering placeholder/typo that detracts from a premium visual presentation.
+* **Severity:** **Low**
+
+#### IS-11: VS Badge & Header Off-Centering (Comparison Section)
+* **Location:** Centered `vs` badge between Legacy and Native headers
+* **Type:** Visual Alignment
+* **Principle Violated:** Hierarchy & Alignment
+* **Analysis:** The text "vs" is not vertically aligned within its circular badge, sitting slightly too low. The headers also lack distinct horizontal weight contrast to differentiate the systems at a glance.
+* **Severity:** **Low**
+
+#### IS-12: Basic Text Icons for Status Indicators (Comparison Section)
+* **Location:** Left vs. Right checklist cards
+* **Type:** Aesthetic Quality
+* **Principle Violated:** Quality of Execution
+* **Analysis:** The red `✗` and green `✓` icons are basic Unicode/plain-text characters, which look unstyled and cheap. Replacing them with custom SVG circular cross and checkmark graphics would significantly elevate the premium aesthetic.
+* **Severity:** **Low**
+
+#### IS-13: Uneven Grid Height & Asymmetrical Card Layout (Capabilities Grid)
+* **Location:** Platform Capabilities row 1 (`AI-Drafted CAPA Action Plans` & `The Digital Investigator`)
+* **Type:** Grid Rhythm & Layout Consistency
+* **Principle Violated:** Aesthetic Consistency / Balance
+* **Analysis:** The first row features two cards with highly asymmetrical heights (the left being significantly taller than the right). This uneven bottom alignment, coupled with the next row having three cards and the bottom having one, results in a chaotic, accidental-feeling grid structure rather than a structured editorial rhythm.
+* **Severity:** **Medium**
+
+#### IS-14: Icon-to-Content Mismatch in CAPA Action Plans (Capabilities Grid)
+* **Location:** `AI-Drafted CAPA Action Plans` -> Action item list
+* **Type:** Content Integrity / Contextual Mismatch
+* **Principle Violated:** Nielsen Heuristic #2 (Match between System and Real World)
+* **Analysis:** The task item "Update reactor temp monitoring procedure" uses a blue circle containing a white currency dollar symbol (`$`). A regulatory compliance task should never be decorated with a financial dollar icon; a checklist, warning, or task icon is required to maintain professional context.
+* **Severity:** **Low**
+
+#### IS-15: Floating Close "X" Button Visual Bug (Modules Explorer)
+* **Location:** Modules Explorer Widget -> `Docs` tab document list
+* **Type:** Interactive Layout Bug
+* **Principle Violated:** User Control / Minimalist Design
+* **Analysis:** A large, dark grey circular close button containing an `X` floats in the middle of the document list, blocking readable text. This appears to be a stray, mispositioned UI modal element left in the DOM.
+* **Severity:** **High**
+
+#### IS-16: Squeezed Toolbar Icon Cluster & Target Spacing (Modules Explorer)
+* **Location:** Modules Explorer -> Bottom prompt bar and Rich Text editor
+* **Type:** Touch Targets & Spacing
+* **Principle Violated:** Fitts's Law / Visual Crowding
+* **Analysis:** In the active prompt bar, 5 utility icons (mic, attachment, file, history, lightning) are packed together on the right side with almost zero pixel padding between them, making selection error-prone. Additionally, the rich text editor's formatting bar displays a paragraph symbol `¶` instead of a clear underline icon.
+* **Severity:** **Medium**
+
+#### IS-17: Background Color Inconsistency (Case Studies Section)
+* **Location:** Results/Stats row
+* **Type:** Styling Uniformity
+* **Principle Violated:** Aesthetic Consistency
+* **Analysis:** Out of the 4 metric cards, Card 2 (`0` batches released) has a plain white background, while Cards 1, 3, and 4 have a light lavender background. This inconsistent application of style disrupts the visual continuity of the metrics row.
+* **Severity:** **Low**
+
+#### IS-18: Overlapping Step Badge Spacing (How It Works Section)
+* **Location:** Step 01–04 Cards
+* **Type:** Margins & Padding
+* **Principle Violated:** White Space & Rhythm
+* **Analysis:** The floating step number badges (`01`, `02`, etc.) overlap the top card border, but the internal `STEP 01` label is pushed so high up that it lies directly under the overlapping badge circle, creating a crowded and compressed text area.
+* **Severity:** **Low**
+
+---
+
 ## Deep-Dive Analysis of Core Issues
 
 ### A. Information Density vs. Editorial Scannability (IS-01, IS-03, IS-04)

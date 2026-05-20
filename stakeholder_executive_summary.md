@@ -65,13 +65,26 @@ Below is a breakdown of what is happening, why it matters, and how we recommend 
 
 ---
 
+## 7. Attention to Detail: Micro-Level Design Mismatches
+* **The Problem:** While scanning the page, we identified several small visual typos, misaligned elements, and placeholder bugs:
+  * **Stray Characters:** A random blue dot `.` is visible in the middle spacer column of every card in the comparison section.
+  * **Floating Close Button:** A large dark circular `X` (close button) is floating on top of the document list, blocking the text inside the interactive showcase.
+  * **Icon Mismatches:** The compliance task list displays a currency/dollar symbol (`$`) for a standard reactor procedure task, and the rich text editor toolbar displays a paragraph symbol `¶` instead of an underline button.
+  * **Visual Inconsistency:** In the row of four key statistics cards, the second card is colored white while the others have a purple/lavender tint.
+* **Why it matters:** In enterprise software, especially in high-compliance sectors like life sciences, buyers associate "attention to detail in the interface" with "rigor in software engineering." Small typos and misplaced icons degrade user trust.
+* **How we fix it:** 
+  Remove layout placeholders (stray dots and floating close buttons), swap icons for context-accurate alternatives (e.g., checklist checkmarks instead of dollar signs), and unify background tints across metric rows.
+
+---
+
 ## Proposed Next Steps & Action Plan
 
 To tackle these issues without disrupting active development, we recommend a phased approach:
 
-1. **Quick Wins (Est. 1 Day):** 
-   Update the global CSS styles to darken the text contrast, expand the touch targets to 44px, and fix the raw HTML rendering bug in the table.
+1. **Quick Wins (Est. 1-2 Days):** 
+   - Update the global CSS styles to darken the text contrast, expand the touch targets to 44px, and fix the raw HTML rendering bug.
+   - Clean up the micro-level layout bugs: remove stray dots, hide the floating close button, and correct mismatched icons and colors.
 2. **Responsive Fixes (Est. 2 Days):** 
-   Add a sticky navigation header and restore the dashboard preview layout for iPad/tablet viewports.
+   - Add a sticky navigation header and restore the dashboard preview layout for iPad/tablet viewports.
 3. **Layout Simplification (Est. 3-4 Days):** 
-   Work with design to replace the massive vertical stack of configuration screens with a single interactive tabbed showcase.
+   - Work with design to replace the massive vertical stack of configuration screens with a single interactive tabbed showcase.
